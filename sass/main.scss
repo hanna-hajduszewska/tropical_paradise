@@ -11,7 +11,7 @@
 }
 
 html {
-	font-size: 62, 5%;
+	font-size: 62.5%;
 	scroll-behavior: smooth;
 }
 
@@ -71,6 +71,49 @@ body {
 		}
 	}
 }
+.nav {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	transform: translateX(100%);
+	transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+	background-image: $blue-gradient-solid;
+	z-index: 100;
+
+	&--active {
+		transform: translateX(0);
+	}
+
+	&__item {
+		position: relative;
+		display: block;
+		margin: 0.5em 0;
+		padding: 0.5em 2em;
+		font-size: 2.8rem;
+		color: $pure-white;
+		text-decoration: none;
+
+		&::before {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			width: 3px;
+			height: 100%;
+			background-color: $pure-white;
+			transform: scaleY(0);
+			transition: transform 0.3s;
+		}
+
+		&:hover::before {
+			transform: scaleY(1);
+		}
+	}
+}
 
 // HEADER
 .header {
@@ -114,6 +157,19 @@ body {
 	}
 }
 
+@keyframes navItemsAnimation {
+	from {
+		transform: translateX(200%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+.nav-items-animation {
+	animation: navItemsAnimation 1s both;
+}
+
 //===================
 // MEDIA
 //===================
@@ -147,7 +203,7 @@ body {
 
 	.header {
 		background-image: $blue-gradient, url('../img/palm-big.jpg');
-	
+
 		&__heading {
 			font-size: 10rem;
 		}
