@@ -179,6 +179,12 @@ body {
   transform: scaleY(1);
 }
 
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+  background-color: #2e2e2e;
+}
+
 .header {
   position: relative;
   display: flex;
@@ -648,7 +654,7 @@ body {
   .footer__box-list-item {
     margin-bottom: 1em;
   }
-  .footer__box-list-item a {
+  .footer__box-list a {
     color: #eee;
     text-decoration: none;
   }

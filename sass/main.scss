@@ -115,6 +115,12 @@ body {
 	}
 }
 
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+	background-color: $dark;
+}
+
 // HEADER
 .header {
 	position: relative;
@@ -679,11 +685,10 @@ body {
 
 				&-item {
 					margin-bottom: 1em;
-
-					a {
-						color: $light-white;
-						text-decoration: none;
-					}
+				}
+				a {
+					color: $light-white;
+					text-decoration: none;
 				}
 			}
 		}
